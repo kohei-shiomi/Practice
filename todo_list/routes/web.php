@@ -26,14 +26,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-// ログイン状態
+
 Route::group(['middleware' => 'auth'], function() {
 
-    // ユーザ関連
+    
     Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'edit', 'update']]);
 
 
-    // ツイート関連
+   
     Route::resource('todo', 'TodoController', ['only' => ['index', 'create', 'store', 'show', 'edit', 'update', 'destroy']]);
 
 });
