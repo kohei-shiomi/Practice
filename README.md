@@ -5,7 +5,7 @@
 
 2022/9よりオンラインのPHPエンジニアコースでHTML,CSS,PHP,JavaScriptなどについて学びました。
 
-#Todo共有リスト：Todo share
+##Todo共有リスト：Todo share
 
 ## 環境
 ・Mac
@@ -43,7 +43,7 @@
 ## コメント
 今後検索機能や、todoに対してのリアクション、画像投稿など追加できればと思います。
 
-#
+##簡単満足度調査:simplesurvey.jp
 
 ## 環境
 ・Mac
