@@ -5,7 +5,7 @@
 
 2022/9よりオンラインのPHPエンジニアコースでHTML,CSS,PHP,JavaScriptなどについて学びました。
 
-##Todo共有リスト：Todo share
+##Todo共有リスト:Todo share
 
 ## 環境
 ・Mac
