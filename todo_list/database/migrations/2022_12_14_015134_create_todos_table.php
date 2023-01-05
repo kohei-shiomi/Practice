@@ -17,6 +17,7 @@ class CreateTodosTable extends Migration
             $table->Increments('id');
             $table->unsignedInteger('user_name')->comment('ユーザID');
             $table->string('text')->comment('内容');
+            $table->string('image_path')->nullable()->comment('画像のパスを保存するカラム');  
             $table->softDeletes();
             $table->timestamps();
 
