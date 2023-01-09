@@ -12,11 +12,12 @@ header{
 
 li{
     width: 100px;
+    margin-top: 2px;
 }
 
 .logo{
     width: 250px;
-    font-size: 48px;
+    font-size: 42px;
     padding-left: 50px;
 }
 
@@ -63,11 +64,11 @@ a{
     display: none;
 }
 
-h1{
+h2{
     margin: 5% 0 0 5%;
 }
 
-h2{
+h3{
     margin: 5% 0 0 8%;
 }
 
@@ -120,6 +121,12 @@ h2{
             text-align: center;
             width: 100px;
             color: white;
+            font-size: 16px;
+        }
+
+        li{
+            width: 100px;
+            margin-top: 12px;
         }
 
         .open-menu {
@@ -127,7 +134,8 @@ h2{
           }
 
         .introduction {
-            width: 200px;
+            width: 100px;
+            font-size: 0.75rem;
             position:absolute;
             right:190px;
             top: 80px;

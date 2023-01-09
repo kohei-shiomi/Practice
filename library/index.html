@@ -21,8 +21,9 @@
         </button>
         <nav>
             <ul class="menu">
-            
-                <li id="about" onmouseover="show(introduction)" onmouseout = "show(introduction);">about</li>
+                <li id="about" onclick="show(introduction)">about</li>
+                <!-- マウスオーバーでしたかったけどスマホでの対応方法要調査
+                onmouseover="show(introduction)" onmouseout="show(introduction)" -->
                 <li class="contact"><a href="mailto:thisiskshiomi@gmail.com">contact</a></li>
             </ul>
         </nav>
@@ -30,9 +31,16 @@
         
         <script>
             function show() {
-      
-            let element = document.getElementById("introduction");
+                
+            const element = document.getElementById("introduction");
+            const about = document.getElementById("about");
             element.style.visibility = (element.style.visibility == 'visible')? "hidden": "visible";
+
+            if (about.innerHTML === 'about') {
+                about.innerHTML = 'close';
+            } else {
+                about.innerHTML = 'about';
+            }
             }
         </script>
 
@@ -48,7 +56,7 @@
         </script>
     </header>
     <div class="main">
-        <h1>機能</h1>
+        <h2>機能</h2>
         <div class="feature">
         
             <div class="feature1">
@@ -71,7 +79,7 @@
             </div>
         </div>
         <div class="lower">
-            <h1>その他サイト</h1>
+            <h2>その他サイト</h2>
             <div class="sites">
                 <img decoding="async" class="sitepic" id="sitepic1" src="/image/site1-1.png" width="70%" >
 
@@ -92,13 +100,13 @@
                     setInterval(slideshow_timer, 4000);
                 </script>
             </div>
-            <h2>簡単満足度調査</h2>
+            <h3>簡単満足度調査</h3>
             <p class="site-comment">
                 前職で人手をかけず簡単に満足度を調査できるものはないかと思い色々調べたが見つからなかったことを思い出し、
                 色々学んだ今なら近いものは作れるのではないかと思い作成しました。<br>
                 タブレットで使用するイメージで満足度の絵文字をタップすると回数がカウントされ、非表示にしてあるカウント数を結果を表示して確認します。<br>
                 満足度は高いであろうが調査しきれなかった人々から効率的に回答を得やすく、数字に残る成果に変えられる。こんなツールを求めている人は他にもいると思います。<br>
-                改良点は多くあると思いますが自分の「こんなのがあれば」を解消できたことで達成感がありました。
+                改良点は多くあると思いますが自分の「こんなのがあれば」を解消できたことで嬉しく思っています。
             </p>
         </div>
     </div>
