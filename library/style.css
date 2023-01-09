@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    width: 100%;
+    border-bottom: solid 3px;
+    height: 80px;
+    margin-top: 0;
+}
+
+li{
+    width: 100px;
+}
+
+.logo{
+    width: 250px;
+    font-size: 48px;
+    padding-left: 50px;
+}
+
+.menu{
+    width: 250px;
+    height: 80px;
+    display: flex;
+    position:absolute;
+    right:0;
+    list-style: none;
+    font-size: 24px;
+    padding-right: 50px;
+    align-items: center;
+    /* transition: .5s; */
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.logo a:hover{
+    color: rgb(111, 111, 111);
+}
+
+.contact a:hover{
+    
+    color: rgb(150, 50, 50);
+}
+
+ .introduction {
+    width: 200px;
+    position:absolute;
+    right:145px;
+    top: 80px;
+    visibility:hidden; 
+    background:rgba(150,50,50,0.9);
+    padding:1em;
+    color: white;
+}
+
+.btn-menu,
+.close-menu{
+    display: none;
+}
+
+h1{
+    margin: 5% 0 0 5%;
+}
+
+h2{
+    margin: 5% 0 0 8%;
+}
+
+.feature{
+    display: flex;
+    margin: 30px auto ;
+    width: 80%;
+    font-size: 1.2rem;
+}
+
+.feature-img{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feature1,
+.feature2,
+.feature3{
+    margin: 30px;
+    width: 40%; 
+}
+
+.lower{
+    padding: 5px 0 40px 0;
+    background-color: rgba(247, 243, 202, 0.6);
+}
+
+.sites{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.site-comment{
+    margin: 30px auto;
+    width: 80%;
+    font-size: 1.2rem;
+}
+
+
+
+    @media screen and (max-width:768px){
+        .menu{
+            display: block;
+            background: rgba(0, 90, 125, 0.5);
+            position: absolute;
+            /* z-index: 1; */
+            top: 80px;
+            right: -190px;
+            /* overflow-x: hidden; */
+            text-align: center;
+            width: 100px;
+            color: white;
+        }
+
+        .open-menu {
+            right: 0;
+          }
+
+        .introduction {
+            width: 200px;
+            position:absolute;
+            right:190px;
+            top: 80px;
+            visibility:hidden; 
+            background:rgba(150,50,50,0.5);
+        }
+
+        .contact a{
+            text-decoration: none;
+            color:white;
+            width: 100px;
+        }
+    
+        .btn-menu{
+            display: block;
+            position:absolute;
+            right:0;
+            margin: 15px 20px ;
+            background:url('/image/menu.png');
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .close-btn-menu{
+            background:url('/image/close.png');
+            transition: .5s;
+        }
+        .main{
+            margin-bottom: 0;
+            
+        }
+
+        .feature{
+            display: block;
+            width: 80%;
+            margin: 0 auto ;
+        }
+
+        .feature1,
+        .feature2,
+        .feature3{
+            margin: 50px auto 90px auto;
+            width: 50%;
+        }
+
+        h1,
+        h2{
+            margin: 5% 0 0 10%;
+        }
+
+    }
+

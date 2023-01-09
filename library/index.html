@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>library</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+        
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="/index.html">library</a></div>
+        <button class="btn-menu">
+        </button>
+        <nav>
+            <ul class="menu">
+            
+                <li id="about" onmouseover="show(introduction)" onmouseout = "show(introduction);">about</li>
+                <li class="contact"><a href="mailto:thisiskshiomi@gmail.com">contact</a></li>
+            </ul>
+        </nav>
+        <span id="introduction" class="introduction">2022年後半からweb制作の学習を始めた30代です。<br>ここでアウトプットしています。</span>
+        
+        <script>
+            function show() {
+      
+            let element = document.getElementById("introduction");
+            element.style.visibility = (element.style.visibility == 'visible')? "hidden": "visible";
+            }
+        </script>
+
+        <script>
+            const btn = document.querySelector('.btn-menu');
+            const menu = document.querySelector('.menu');
+
+            btn.addEventListener('click', () => {
+              menu.classList.toggle('open-menu'),
+              btn.classList.toggle('close-btn-menu')
+              
+            });
+        </script>
+    </header>
+    <div class="main">
+        <h1>機能</h1>
+        <div class="feature">
+        
+            <div class="feature1">
+                <div class="feature-img">
+                    <img src="/image/width.png" alt="menu" width="80px">
+                </div>
+                <p>画面幅が767px以下になるとメニューボタンを表示</p>
+            </div>
+            <div class="feature2">
+                <div class="feature-img">
+                    <img src="/image/cursor.png" alt="menu" width="80px">
+                </div>
+                <p>aboutにカーソルを運ぶとテキストを表示</p>
+            </div>
+            <div class="feature3">
+                <div class="feature-img">
+                    <img src="/image/menu.png" alt="menu" width="80px">
+                </div>
+                <p>メニューボタンをクリックするとスライドメニューを表示</p>
+            </div>
+        </div>
+        <div class="lower">
+            <h1>その他サイト</h1>
+            <div class="sites">
+                <img decoding="async" class="sitepic" id="sitepic1" src="/image/site1-1.png" width="70%" >
+
+                <script>
+                    const pics_src = ["/image/site1-1.png","/image/site1-2.png","/image/site1-3.png"];
+                    let num = 1;
+ 
+                    function slideshow_timer(){
+                    if (num === 2){
+                    num = 0;
+                    } 
+                    else {
+                    num ++;
+                    }
+                        document.getElementById("sitepic1").src = pics_src[num];
+                    }
+ 
+                    setInterval(slideshow_timer, 4000);
+                </script>
+            </div>
+            <h2>簡単満足度調査</h2>
+            <p class="site-comment">
+                前職で人手をかけず簡単に満足度を調査できるものはないかと思い色々調べたが見つからなかったことを思い出し、
+                色々学んだ今なら近いものは作れるのではないかと思い作成しました。<br>
+                タブレットで使用するイメージで満足度の絵文字をタップすると回数がカウントされ、非表示にしてあるカウント数を結果を表示して確認します。<br>
+                満足度は高いであろうが調査しきれなかった人々から効率的に回答を得やすく、数字に残る成果に変えられる。こんなツールを求めている人は他にもいると思います。<br>
+                改良点は多くあると思いますが自分の「こんなのがあれば」を解消できたことで達成感がありました。
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>
