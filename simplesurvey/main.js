@@ -84,7 +84,9 @@ function clickBtn1(){
     } else {
       counter[i].style.visibility = "hidden";
     }
- }}
+}
+
+};
 
 
 
