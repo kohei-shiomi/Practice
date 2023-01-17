@@ -17,7 +17,7 @@ li{
 
 .logo{
     width: 250px;
-    font-size: 42px;
+    font-size: 2.5rem;
     padding-left: 50px;
     margin-top: 5px;
 }
@@ -29,9 +29,10 @@ li{
     position:absolute;
     right:0;
     list-style: none;
-    font-size: 24px;
+    font-size: 1.5rem;
     padding-right: 50px;
     align-items: center;
+    cursor: pointer;
     /* transition: .5s; */
 }
 
@@ -44,8 +45,7 @@ a{
     color: rgb(111, 111, 111);
 }
 
-.contact a:hover{
-    
+.menu :hover{
     color: rgb(150, 50, 50);
 }
 
@@ -127,7 +127,7 @@ h3{
 
         li{
             width: 100px;
-            margin-top: 12px;
+            margin-top: 10px;
         }
 
         .open-menu {
@@ -160,11 +160,13 @@ h3{
             height: 50px;
             border-radius: 5px;
             border: none;
+            cursor: pointer;
         }
 
         .close-btn-menu{
             background:url('/image/close.png');
             transition: .5s;
+            cursor: pointer;
         }
         .main{
             margin-bottom: 0;
