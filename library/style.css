@@ -65,11 +65,11 @@ a{
     display: none;
 }
 
-h2{
+h1{
     margin: 5% 0 0 5%;
 }
 
-h3{
+h2{
     margin: 5% 0 0 8%;
 }
 
@@ -104,8 +104,19 @@ h3{
 
 .site-comment{
     margin: 30px auto;
-    width: 80%;
+    width: 70%;
     font-size: 1.2rem;
+}
+
+.form{
+    width: 60%;
+    margin: 30px auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea[type="text"] { 
+    width: 40%; 
 }
 
 
