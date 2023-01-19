@@ -65,11 +65,11 @@ a{
     display: none;
 }
 
-h1{
+h2{
     margin: 5% 0 0 5%;
 }
 
-h2{
+h3{
     margin: 5% 0 0 8%;
 }
 
@@ -109,17 +109,52 @@ h2{
 }
 
 .form{
-    width: 60%;
+    width: 300px;
     margin: 30px auto;
+    text-align: center;
+}
+
+.form h3{
+    text-align: left;
+    margin: 20px 0;
 }
 
 input[type="text"],
-input[type="email"],
-textarea[type="text"] { 
-    width: 40%; 
+input[type="email"]{ 
+    width: 300px; 
+    height: 1.5rem;
 }
 
+textarea[type="text"] { 
+    width: 300px; 
+}
 
+.submit-btn{
+    margin: 20px 0;
+    min-height: 30px;
+    min-width: 100px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    border: 1;
+    font-size: 1.1rem;
+}
+
+.submit-btn:hover{
+    background-color: rgb(247, 243, 202);
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+    border: 1;
+}
+
+.confirm{
+    width: 400px;
+    margin: 30px auto;
+}
+
+th{
+    text-align: left;
+    padding-right: 20px;
+}
 
     @media screen and (max-width:768px){
         .menu{
@@ -166,7 +201,7 @@ textarea[type="text"] {
             position:absolute;
             right:0;
             margin: 15px 20px ;
-            background:url('/image/menu.png');
+            background:url('./image/menu.png');
             width: 50px;
             height: 50px;
             border-radius: 5px;
@@ -175,7 +210,7 @@ textarea[type="text"] {
         }
 
         .close-btn-menu{
-            background:url('/image/close.png');
+            background:url('./image/close.png');
             transition: .5s;
             cursor: pointer;
         }
@@ -197,9 +232,21 @@ textarea[type="text"] {
             width: 50%;
         }
 
-        h1,
-        h2{
+        h2,
+        h3{
             margin: 5% 0 0 10%;
+        }
+
+        .form{
+            width: 300px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea[type="text"] { 
+            width: 300px; 
         }
 
     }
