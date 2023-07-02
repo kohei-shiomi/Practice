@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+       <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6XCPV9Z1TJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -11,47 +11,145 @@
   gtag('config', 'G-6XCPV9Z1TJ');
 </script>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
-    <title>Easy-satisfaction_survey</title>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
+<style>
+    .comment{
+        margin-top: 50pt;
+        text-align: center;
+        font-size: 3.5vw;
+    }
+    #app{
+        text-align: center;
+    }
+    .counter{
+        width:900px;
+        display: flex;
+        justify-content: space-between;
+        margin: 100px auto 30px;
+    }
+    .count{
+        text-align: center;
+        width: 150px;
+    }
+    .btnArea{
+        margin: 150px;
+    }
+    .count button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    .btnAnswer{
+        width: 100px;
+    }
+    .btnAnswer:hover {
+        opacity: 0.9;
+    }
+    .btnAnswer:active {
+        transform: translate(0,2px);
+    }
+    .title{
+        font-size: 2.2vw;
+        font-weight: 700;
+    }
+    .result{
+        font-size: 2.4vw;
+        font-weight: 700;
+    }
+    .btnArea button{
+        background: none;
+        padding: 5px;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .btnArea button:hover{
+        transform: translate(0,2px);
+    }
+    @media screen and (max-width:900px) {
+        .counter{
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        margin: 50px auto 30px;
+    }
+    .count{
+        text-align: center;
+        width: 10%;
+    }
+    .btnAnswer{
+        width: 80%;
+    }
+    .btnArea{
+        margin: 50px;
+    }
+ 
+}
+</style>
 <body>
-<div class="comment">
-    <p>絵文字をタップして感想をお聞かせください！</p>
+    <div class="comment">
+        <p>絵文字をタップして感想をお聞かせください！</p>
+    </div>
+    <div id="app">
+        <div class="counter">
+        <div class="count">
+            <p class="title">大満足</p>
+            <button @click="count1++"><img src="images/very-satisfied.png" alt="大満足"class="btnAnswer"></button>
+            <p v-if="isHidden" class="result">{{ count1 }}</p>
+        </div>
+        <div class="count">
+            <p class="title">やや満足</p>
+            <button @click="count2++"><img src="images/satisfied.png" alt="満足"class="btnAnswer"></button>
+            <p v-if="isHidden" class="result">{{ count2 }}</p>
+        </div>
+        <div class="count">
+            <p class="title">普通</p>
+            <button @click="count3++"><img src="images/satisfied.png" alt="普通"class="btnAnswer"></button>
+            <p v-if="isHidden" class="result">{{ count3 }}</p>
+        </div>
+        <div class="count">
+            <p class="title">やや不満</p>
+            <button @click="count4++"><img src="images/unsatisfied.png" alt="やや不満"class="btnAnswer"></button>
+            <p v-if="isHidden" class="result">{{ count4 }}</p>
+        </div>
+        <div class="count">
+            <p class="title">不満</p>
+            <button @click="count5++"><img src="images/very-unsatisfied.png" alt="不満"class="btnAnswer"></button>
+            <p v-if="isHidden" class="result">{{ count5 }}</p>
+        </div>
+    </div>
+    <div class="btnArea">
+    <button v-on:click="isHidden = !isHidden">{{ isHidden ? '非表示' : '結果を表示' }}</button>
+    <button v-if="isHidden" @click="reloadPage">リセット</button>
 </div>
 
-<div class="counter-area">
-    
-    <div class="very-satisfied">
-        <p><input type="image" id="btnAnswer1" src="images/very-satisfied.png" alt="大満足" name="very-satisfied" class="btnAnswer"></p>
-        <p class="scale">大満足</p> 
-        <p id="counter1" class="counter">0</p> 
-    </div>
-    <div class="satisfied">
-        <p><input type="image" id="btnAnswer2" src="images/satisfied.png" alt="満足" name="satisfied" class="btnAnswer"></p>
-        <p class="scale">満足</p> 
-        <p id="counter2" class="counter">0</p> 
-    </div>
-    <div class="neutral">
-        <p><input type="image" id="btnAnswer3" src="images/neutral.png" alt="普通" name="neutral" class="btnAnswer"></p>
-        <p class="scale">普通</p> 
-        <p id="counter3" class="counter">0</p> 
-    </div>
-    <div class="unsatisfied">
-        <p><input type="image" id="btnAnswer4" src="images/unsatisfied.png" alt="やや不満" name="unsatisfied" class="btnAnswer"></p>
-        <p class="scale">やや不満</p> 
-        <p id="counter4" class="counter">0</p> 
-    </div>
-    <div class="very-unsatisfied">
-        <p><input type="image" id="btnAnswer5" src="images/very-unsatisfied.png" alt="不満" name="very-unsatisfied" class="btnAnswer"></p>
-        <p class="scale">不満</p> 
-        <p id="counter5" class="counter">0</p> 
-    </div>  
-</div>
-    <div class="button">
-        <input type="button" value="結果を表示/非表示" onclick="clickBtn1()" id="showResult" class="result_btn">
     </div>
 </body>
+<script> 
+var counter = new Vue({
+    el: "#app",
+    data() {
+        return {
+      count1: 0,
+      count2: 0,
+      count3: 0,
+      count4: 0,
+      count5: 0,
+      isHidden: false
+      }
+    },
+    methods: {
+    reloadPage() {
+      window.location.reload();
+    }
+  }
+
+  });
+  </script>
+ 
 </html>

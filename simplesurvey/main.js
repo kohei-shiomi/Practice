@@ -3,6 +3,7 @@
 function answerCount1(){
     n++;
     counter1.innerHTML = n;
+
 }
 
 window.addEventListener("load", ()=>{
@@ -85,6 +86,7 @@ function clickBtn1(){
       counter[i].style.visibility = "hidden";
     }
 }
+
 
 };
 

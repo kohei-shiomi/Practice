@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6XCPV9Z1TJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6XCPV9Z1TJ');
+</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>Easy-satisfaction_survey</title>
+</head>
+<body>
+<div class="comment">
+    <p>絵文字をタップして感想をお聞かせください！</p>
+</div>
+
+<div class="counter-area">
+    
+    <div class="very-satisfied">
+        <p><input type="image" id="btnAnswer1" src="images/very-satisfied.png" alt="大満足" name="very-satisfied" class="btnAnswer" onclicl="answerCount1()"></p>
+        <p class="scale">大満足</p> 
+        <p id="counter1" class="counter">0</p> 
+    </div>
+    <div class="satisfied">
+        <p><input type="image" id="btnAnswer2" src="images/satisfied.png" alt="満足" name="satisfied" class="btnAnswer"></p>
+        <p class="scale">満足</p> 
+        <p id="counter2" class="counter">0</p> 
+    </div>
+    <div class="neutral">
+        <p><input type="image" id="btnAnswer3" src="images/neutral.png" alt="普通" name="neutral" class="btnAnswer"></p>
+        <p class="scale">普通</p> 
+        <p id="counter3" class="counter">0</p> 
+    </div>
+    <div class="unsatisfied">
+        <p><input type="image" id="btnAnswer4" src="images/unsatisfied.png" alt="やや不満" name="unsatisfied" class="btnAnswer"></p>
+        <p class="scale">やや不満</p> 
+        <p id="counter4" class="counter">0</p> 
+    </div>
+    <div class="very-unsatisfied">
+        <p><input type="image" id="btnAnswer5" src="images/very-unsatisfied.png" alt="不満" name="very-unsatisfied" class="btnAnswer"></p>
+        <p class="scale">不満</p> 
+        <p id="counter5" class="counter">0</p> 
+    </div>  
+</div>
+    <div class="button">
+        <input type="button" value="結果を表示/非表示" onclick="clickBtn1()" id="showResult" class="result_btn">
+    </div>
+</body>
+</html>
