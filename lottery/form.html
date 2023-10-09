@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="func.js"></script>
+
+</head>
+<body>
+<div class="formArea">
+  <form name="prizeForm" method="post" action="lottery.php" id="prizeForm">
+    <div class="maxNumber">
+      <p class="ttl">10単位でハズレを含む全数量を入力してください</p>
+      <input type="number" name="maxNumber" min="10" max="5000" step="10" required>
+    </div>
+
+    <div id="prizeArea"></div>
+    
+    <template id="prizeTemplate">
+      <div id="prize">
+        <p class="ttl">賞品を入力してください</p>
+        <input type="text" name="title[]" value="" placeholder="（例）○等・残念賞・ハズレ" required>
+        <br>
+        <textarea name="prizeName[]" value="" cols="20" rows="1"  wrap="soft" placeholder="賞品名" required></textarea>
+        <br>
+        <input type="number" min="1" max="5000" step="1" placeholder="当選数量" required>
+        
+          <p id="textLessPrize">賞品を削除</p>
+          <input type="button" value="-" onclick="lessPrize(this)" id="lessPrizeBtn">
+       
+      </div>
+    </template>
+   
+ 
+  <div class="addPrize">
+    <p id="textAddPrize">賞品を追加<br>※最大8件</p>
+    <input type="button" value="+" onclick="addPrize()" id="addPrizeBtn">
+  </div>
+
+  <input type="submit" value="送信" class="submitBtn">
+
+</form>
+</div>
+
+  </form>
+</body>
+</html>

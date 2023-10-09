@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow,noarchive">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Language" content="ja">
+    <meta name="google" content="notranslate">
+    <title>対象店舗一覧</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+    <script>
+        var ua = navigator.userAgent.toLowerCase();
+        var isiOS = (ua.indexOf('iphone') > -1) || (ua.indexOf('ipad') > -1);
+        if (isiOS) {
+            var viewport = document.querySelector('meta[name="viewport"]');
+            if (viewport) {
+                var viewportContent = viewport.getAttribute('content');
+                viewport.setAttribute('content', viewportContent + ', user-scalable=no');
+            }
+        }
+    </script>
+   
+<script>
+    $(function () {
+        $('select').change(function () { 
+          var speed = 400;
+          var href = $(this).val();
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });
+</script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WJZRBXQ');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<style type="text/css">
+    body {
+        max-width: 750px;
+        width: 100% !important;
+        margin: 0 auto;
+        padding: 0;
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none;
+        font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "lucida grande", Osaka, "ＭＳ Ｐゴシック", "MS PGothic";
+    }
+
+    .ReadMsgBody {
+        width: 100%;
+    }
+
+    .ExternalClass {
+        width: 100%;
+    }
+
+    a:link,
+    a:visited {
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        width
+        /***/
+        : auto;
+    }
+
+    #pulldown_ew {
+        margin: 10px 5px 0;
+        font-size: 18px;
+    }
+
+    #page {
+        margin: 5px;
+    }
+
+    .page_ttl {
+        color: #ed6d00;
+        margin: 10px;
+        font-size: 28px;
+        font-weight: 900;
+        text-align: center;
+    }
+
+
+    .btn {
+        position: relative;
+        color: #fff;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 900;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px #000;
+    }
+
+    .btn::after {
+        position: absolute;
+        top: 50%;
+        right: 1em;
+        width: 0.5em;
+        height: 0.5em;
+        transform: translateY(-50%) rotate(45deg);
+        border-right: 2px solid currentColor;
+        border-top: 2px solid currentColor;
+        content: "";
+    }
+
+    .r_btn {
+        background: #E50012;
+    }
+
+    .btn:hover {
+        opacity: 0.75;
+        color: #fff !important;
+    }
+
+    .outline{
+        border: #000 1px solid;
+        padding: 10px 5px 5px;
+    }
+
+    table{
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .pref {
+        background:#1B50A2 ;
+        color: #fff;
+        text-align: center;
+    }
+
+    .pref:nth-of-type(1) {
+      /* display: none; */
+      width: 100%;
+        text-align: center;
+        margin: 20px 0 0;
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+
+    .pref:nth-of-type(2) {
+        display: none;
+      /* width: 100%;
+        text-align: center;
+        margin: 20px 0 0;
+        font-size: 1.5rem;
+        font-weight: 900; */
+    }
+
+    .shop{
+        font-weight: 900;
+        font-size: 1.1rem;
+        padding: 5px 5px 20px;
+    }
+
+       /* ページトップ */
+       #page-top {
+        position: fixed;
+        right: 1%;
+        bottom: 1%;
+        z-index: 999;
+        /*はじめは非表示*/
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    #page-top a {
+        text-decoration: none;
+        border-radius: 5px;
+        background: #1D50A3;
+        text-align: center;
+        color: #FFFFFF;
+        display: block;
+        overflow: hidden;
+        width: 40px;
+        height: 40px;
+    }
+
+    #page-top a img {
+        width: 60%;
+        vertical-align: -webkit-baseline-middle;
+    }
+
+    /*　上に上がる動き　*/
+    #page-top.UpMove {
+        animation: UpAnime 0.5s forwards;
+    }
+
+    @keyframes UpAnime {
+        from {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /*　下に下がる動き　*/
+    #page-top.DownMove {
+        animation: DownAnime 0.5s forwards;
+    }
+
+    @keyframes DownAnime {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(300px);
+        }
+    }
+
+
+    @media (max-width: 750px) {
+        .btn {
+            margin: 20px 10px 30px;
+            padding: 15px 10px;
+            font-size: 4vw;
+        }
+        body{
+            width: 95%!important;
+            margin: 0 auto;
+        }
+tr{
+  display: flex;
+  flex-direction: column;
+}
+.shop{
+  text-align: center;
+ padding: 15px 5px 0;
+}
+    }
+
+    @media (min-width: 751px) {
+        .btn {
+            margin: 5% 2%;
+            padding: 2%;
+            font-size: 1.5rem;
+        }
+
+    .shop{
+        font-weight: 900;
+        font-size: 1.1rem;
+        padding: 5px 5px;
+        width: 50%;
+    }
+    tr{
+      display: flex;
+      justify-content: space-between;
+    }
+    }
+</style>
+
+<!-- 文字化け防止 -->
+<script>
+    $.ajaxSetup({
+    beforeSend : function(xhr) {
+        xhr.overrideMimeType('text/html;charset=Shift_JIS');
+    }
+});
+ 
+$.ajax({
+    url      : 'shop.csv',
+    dataType : 'text',
+    success  : function(resText) {
+        // 処理
+    }
+});
+</script>
+<!-- 文字化け防止 -->
+
+
+<!-- scv読み込み -->
+<script>
+    $(function () {
+        function readCsv(data) {
+            var target = '#result';
+            var csv = $.csv.toArrays(data);
+            var itemlist = '';
+            $(csv).each(function () {
+                if (this[0].length > 0 
+                && this[0] == "pref"
+                )  {
+                    itemlist += '<tr id="' + this[1] + '"><td class="'+ this[0] +'">' + this[2] + '</td></tr>';}
+                    else {
+                    itemlist += '<tr><td class="'+ this[0] +'">' + this[2] + '</td><td class="'+ this[0] +'">' + this[3] + '</td></tr>';
+                }
+            });
+            $(target).append(itemlist);
+        }
+        var randam = Math.random() * 4;
+
+        // csvの名前が変わる場合↓
+        var csvfile = 'shop.csv?d=' + randam;
+
+        $(function () {
+            $.get(csvfile, readCsv, 'text');
+        });
+    });
+</script>
+<!-- scv読み込み -->
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.11/jquery.csv.min.js"></script>
+
+</head>
+<body>
+    <div id="page">
+        <div class="page_ttl">対象店舗一覧</div>
+        <select name="area" id="pulldown_ew">
+            <option value="all">都道府県</option>
+            <option value="#1">北海道</option>
+            <!-- <option value="#2">青森県</option> -->
+            <!-- <option value="#3">岩手県</option> -->
+            <!-- <option value="#4">宮城県</option> -->
+            <!-- <option value="#5">秋田県</option> -->
+            <!-- <option value="#6">山形県</option> -->
+            <!-- <option value="#7">福島県</option> -->
+            <!-- <option value="#8">茨城県</option> -->
+            <!-- <option value="#9">栃木県</option> -->
+            <!-- <option value="#10">群馬県</option> -->
+            <option value="#11">埼玉県</option>
+            <!-- <option value="#12">千葉県</option> -->
+            <!-- <option value="#13">東京都</option> -->
+            <option value="#14">神奈川県</option>
+            <!--<option value="#15">新潟県</option>
+            <option value="#16">富山県</option>-->
+            <option value="#17">石川県</option>
+            <option value="#18">福井県</option>
+            <!-- <option value="#19">山梨県</option> -->
+            <!-- <option value="#20">長野県</option> -->
+            <option value="#21">岐阜県</option>
+            <option value="#22">静岡県</option>
+            <option value="#23">愛知県</option>
+            <option value="#24">三重県</option>
+            <option value="#25">滋賀県</option>
+            <option value="#26">京都府</option>
+            <option value="#27">大阪府</option>
+            <option value="#28">兵庫県</option>
+            <option value="#29">奈良県</option>
+            <!-- <option value="#30">和歌山県</option> -->
+            <option value="#31">鳥取県</option>
+            <option value="#32">島根県</option>
+            <option value="#33">岡山県</option>
+            <option value="#34">広島県</option>
+            <option value="#35">山口県</option>
+            <!-- <option value="#36">徳島県</option> -->
+            <option value="#37">香川県</option>
+            <option value="#38">愛媛県</option>
+            <!-- <option value="#39">高知県</option> -->
+            <option value="#40">福岡県</option>
+            <option value="#41">佐賀県</option>
+            <option value="#42">長崎県</option>
+            <option value="#43">熊本県</option>
+            <!-- <option value="#44">大分県</option> -->
+            <option value="#45">宮崎県</option>
+            <!-- <option value="#46">鹿児島県</option> -->
+            <!-- <option value="#47">沖縄県</option> -->
+        </select>
+       
+    </div>
+<div class="outline">
+    <table>
+        <thead></thead>
+        <tbody id="result"></tbody>
+    </table>
+</div>
+<div id="footer">
+    <p id="page-top"><a href="#"><img src="https://www.edion.com/ito/contents/special/lp/tenpo/img/icon-angle-up.png" alt=""></a></p>
+</div>
+
+<script src="https://www.edion.com/ito/contents/special/lp/tenpo/js/func.js?d="+randam></script>
+</body>
+</html>
+
+

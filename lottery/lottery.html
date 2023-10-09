@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button id="b">くじを引く</button> 
+<h2 id="r"></h2>
+
+<script src="/その他/lottery/funk.js"></script>
+<!-- <script src="https://www.edion.com/ito/contents/test/lottery/funk.js"></script> -->
+
+<!-- <script>
+ function lot() { 
+    const data = { 
+      '1等': 10,  // 10% 
+      '2等': 20,  // 20% 
+      '3等': 30, // 30% 
+      // はずれ 40% 
+    } 
+    const rand = Math.floor(Math.random() * 100) 
+    let result = 'はずれ'
+    let rate = 0 
+    for (const prop in data) { 
+      rate += data[prop] 
+      if (rand <= rate) { 
+        result = prop 
+        break
+      } 
+    } 
+    return result 
+    // 1等や2等などを設定した確率で表示 
+  } 
+    
+  const r = document.getElementById('r') 
+  const b = document.getElementById('b') 
+  let _r = [] 
+  b.addEventListener('click', () => { 
+    r.innerHTML = lot() 
+  })</script> -->
+
+
+</body>
+</html>

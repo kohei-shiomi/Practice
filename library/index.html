@@ -12,7 +12,8 @@
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-   
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 <body>
     <header>
@@ -21,10 +22,8 @@
         </button>
         <nav>
             <ul class="menu">
-                <li id="about" onclick="show(introduction)">about</li>
-                <!-- マウスオーバーでしたかったけどスマホでの対応方法要調査
-                onmouseover="show(introduction)" onmouseout="show(introduction)" -->
-                <li class="contact"><a href="form.php">contact</a></li>
+                <li id="about" onmouseover="show(introduction)" onmouseout="show(introduction)">about</li>
+                <li class="contact"><a href="./form/" target="blank" rel="noopener">contact</a></li>
             </ul>
         </nav>
         <span id="introduction" class="introduction">2022年後半からweb制作の学習を始めた30代です。<br>ここでアウトプットしています。</span>
@@ -56,7 +55,7 @@
         </script>
     </header>
     <div class="main">
-        <h2>機能</h2>
+        <h2>制作物</h2>
         <div class="feature">
         
             <div class="feature1">
@@ -78,29 +77,36 @@
                 <p>メニューボタンをクリックするとスライドメニューを表示</p>
             </div>
         </div>
-        <div class="lower">
-            <h2>その他サイト</h2>
+        <div class="lower1">
+            <a href="https://www.simplesurvey.jp/" target="_blank"><h2>簡単満足度調査</h2></a>
             <div class="sites">
-                <img decoding="async" class="sitepic" id="sitepic1" src="/image/site1-1.png" width="70%" >
-
-                <script>
-                    const pics_src = ["./image/site1-1.png","./image/site1-2.png","./image/site1-3.png"];
-                    let num = 1;
- 
-                    function slideshow_timer(){
-                    if (num === 2){
-                    num = 0;
-                    } 
-                    else {
-                    num ++;
-                    }
-                        document.getElementById("sitepic1").src = pics_src[num];
-                    }
- 
-                    setInterval(slideshow_timer, 4000);
-                </script>
+                
+                <div class="swiperArea">
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                        <!-- Slides -->
+                            <div class="swiper-slide"><img src="./image/site1-1.png" width="100%" height="" class="" alt=""></div>
+                            <div class="swiper-slide"><img src="./image/site1-2.png" width="100%" height="" class="" alt=""></div>
+                            <div class="swiper-slide"><img src="./image/site1-3.png" width="100%" height="" class="" alt=""></div>
+                        </div>
+        
+            
+                        <!--前後ボタン If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    
+                    </div>
+                            <!--ドット If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                </div>
+        
+        
             </div>
-            <h3>簡単満足度調査</h3>
+            <p class="update">当初はフレームワークなしのjavascriptで作成していましたがVueを学んだ際にアンケート調査ページをVueで作り直しました。<br>
+            この機会に表示/非表示ボタンのテキスト切り替えやリセットボタンも追加するなど少しアップデートしました。</p>
+            <p class="oldVer">当初のページは<a href="http://simplesurvey.jp/survey2.html">こちら</a></p>
             <p class="site-comment">
                 前職で人手をかけず簡単に満足度を調査できるものはないかと思い色々調べたが見つからなかったことを思い出し、
                 色々学んだ今なら近いものは作れるのではないかと思い作成しました。<br>
@@ -109,22 +115,35 @@
                 改良点は多くあると思いますが自分の「こんなのがあれば」を解消できたことで嬉しく思っています。
             </p>
         </div>
-        <h2>お問い合わせ</h2>
-        <div class="form" id="form">
-            <form method="post" action="confirm.php">
-                <h3>お名前</h3>
-                <input type="text" name="name" value="" placeholder="お名前" class="input" required>
-                <h3>メールアドレス</h3>
-                <input type="email" name="email" value="" placeholder="メールアドレス" class="input" required>
-                <h3>内容</h3>
-                <textarea type="text" name="body" placeholder="お問い合わせ内容" rows="7" class="input" required></textarea><br>
-                <button type="submit" name="submit" value="確認" class="submit-btn">確認</button>
-            </form>
-        
+        <div class="lower2">
+            <a href="https://library-ks.com/tenpo.html"><h2>店舗リストページ</h2></a>
         </div>
         
     </div>
     
+<script>
+    const swiper = new Swiper('.swiper', {
+ // Optional parameters
+
+//  スライドの方向
+ direction: 'horizontal',
+
+//  一方向にスライド
+ loop: true,
+
+//  ドット
+ pagination: {
+   el: '.swiper-pagination',
+   clickable: true
+ },
+
+//  スライドのスピード
+ autoplay: {
+       delay: 4000,
+   },
+ 
+});
+ </script>
 </body>
 </html>
 

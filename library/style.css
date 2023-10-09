@@ -6,8 +6,9 @@ header{
     display: flex;
     width: 100%;
     border-bottom: solid 3px;
-    height: 80px;
+    /* height: 80px; */
     margin-top: 0;
+    padding: 0 0 10px
 }
 
 li{
@@ -92,7 +93,7 @@ h3{
     width: 40%; 
 }
 
-.lower{
+.lower1{
     padding: 5px 0 40px 0;
     background-color: rgba(247, 243, 202, 0.6);
 }
@@ -103,7 +104,7 @@ h3{
 }
 
 .site-comment{
-    margin: 30px auto;
+    margin: 20px auto 30px;
     width: 70%;
     font-size: 1.2rem;
 }
@@ -156,19 +157,184 @@ th{
     padding-right: 20px;
 }
 
+.update{
+    width: 70%;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 10px auto 0;
+}
+
+.oldVer{
+    width: 70%;
+    margin: 10px auto 0;
+    text-align: right;
+}
+
+.oldVer a{
+    text-decoration: underline;
+}
+
+#pulldown_ew {
+    margin: 10px 5px 0;
+    font-size: 18px;
+}
+
+#page {
+    margin: 5px;
+}
+
+.page_ttl {
+    color: #ed6d00;
+    margin: 10px;
+    font-size: 28px;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+.outline{
+    border: #000 1px solid;
+    padding: 10px 5px 5px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.pref {
+    background:#1B50A2 ;
+    color: #fff;
+    text-align: center;
+}
+
+.pref:nth-of-type(1) {
+    width: 30%;
+    background:#1B50A2 ;
+}
+
+.pref:nth-of-type(2) {
+    text-align: center;
+    padding:5px 35% 5px 0;
+    margin: 20px 0 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.shop{
+    font-weight: 900;
+    font-size: 1.1rem;
+    padding: 5px 5px 20px;
+}
+
+.shop:nth-of-type(2) {
+    text-align: left;
+    padding-left: 18%;
+}
+
+   /* ページトップ */
+   #page-top {
+    position: fixed;
+    right: 1%;
+    bottom: 1%;
+    z-index: 999;
+    /*はじめは非表示*/
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+#page-top a {
+    text-decoration: none;
+    border-radius: 5px;
+    background: #1D50A3;
+    text-align: center;
+    color: #FFFFFF;
+    display: block;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+}
+
+#page-top a img {
+    width: 60%;
+    vertical-align: -webkit-baseline-middle;
+}
+
+/*　上に上がる動き　*/
+#page-top.UpMove {
+    animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*　下に下がる動き　*/
+#page-top.DownMove {
+    animation: DownAnime 0.5s forwards;
+}
+
+@keyframes DownAnime {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(300px);
+    }
+}
+
+.swiperArea{
+    position: relative;
+}
+
+    .swiper {
+  width: 70%;
+  /* height: 300px; */
+}
+
+/* 前後ボタン */
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+color: #979797;
+}
+
+
+/* ドットの位置 */
+.swiper-pagination{
+    /* bottom: -30px !important; */
+    position:relative!important;
+}
+
+/* ドットの色 */
+.swiper-pagination-bullet {
+background-color: #000;
+}
+
     @media screen and (max-width:768px){
         .menu{
             display: block;
             background: rgba(0, 90, 125, 0.5);
             position: absolute;
             /* z-index: 1; */
-            top: 80px;
+            top: 60px;
             right: -190px;
             /* overflow-x: hidden; */
             text-align: center;
             width: 100px;
             color: white;
             font-size: 16px;
+            height: 50px;
         }
 
         li{

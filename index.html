@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <!-- react.js CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <!-- Babel CDN -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+
+  <!-- react router CDN -->
+  <script src="https://unpkg.com/react-router-dom@5.3.0/umd/react-router-dom.min.js"></script>
+  <!-- materiial ui CDN -->
+  <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js" crossorigin="anonymous"></script>
+
+
+  <!-- Fonts to support Material Design  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" />
+  <!-- \Icons to support Material Design  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react-router-dom@5.3.0/umd/react-router-dom.min.js"></script>
+
+  <script type="text/babel">
+
+    // Reactコンポーネントの定義
+    class LotteryApp extends React.Component {
+
+
+      constructor(props) {
+        super(props);
+        this.state = {
+          prizes: [], // 景品の配列 [{ name: '景品1', maxQuantity: 10 }, ...]
+          newPrizeName: '',
+          newPrizeMaxQuantity: '',
+          drawResult: '',
+          isFormVisible: true, // フォームの表示/非表示を制御
+          showPrizes: true, // 景品一覧の表示/非表示を制御
+          hideDraw: false, // 抽選の表示/非表示を制御
+        };
+      }
+
+      // 新しい景品を追加するメソッド
+      addPrize = () => {
+
+        const { prizes, newPrizeName, newPrizeMaxQuantity } = this.state;
+        const newPrize = {
+          name: newPrizeName,
+          maxQuantity: parseInt(newPrizeMaxQuantity),
+        };
+        this.setState({
+          prizes: [...prizes, newPrize],
+          newPrizeName: '',
+          newPrizeMaxQuantity: '',
+        });
+      };
+
+      // 抽選を実行するメソッド
+      drawWinner = () => {
+        const { prizes } = this.state;
+        const availablePrizes = prizes.filter(prize => prize.maxQuantity > 0);
+
+        if (availablePrizes.length === 0) {
+          this.setState({ drawResult: '景品の在庫切れ' });
+          return;
+        }
+
+        const randomIndex = Math.floor(Math.random() * availablePrizes.length);
+        const selectedPrize = availablePrizes[randomIndex];
+
+        // 抽選結果を更新し、上限数量を減少させる
+        this.setState({
+          drawResult: `おめでとうございます！ ${selectedPrize.name} が当選しました。`,
+          prizes: prizes.map(prize => {
+            if (prize.name === selectedPrize.name) {
+              return { ...prize, maxQuantity: prize.maxQuantity - 1 };
+            }
+            return prize;
+          }),
+
+        });
+      };
+
+      // 景品一覧を表示するメソッド
+      showPrizes = () => {
+        this.setState({ showPrizes: true });
+      };
+
+
+      // フォームと景品一覧を同時に非表示、抽選を表示にするメソッド
+      hideFormAndPrizes = () => {
+        this.setState({ isFormVisible: false, showPrizes: false, hideDraw: true });
+      };
+
+      render() {
+        const { prizes, newPrizeName, newPrizeMaxQuantity, drawResult, isFormVisible, showPrizes, hideDraw } = this.state;
+        const { 
+             Button             //Material-UI（MUI）のButtonコンポーネント
+           
+          } = MaterialUI;
+        return (
+          <div>
+            {isFormVisible && (
+              <div>
+                <h1>抽選アプリ</h1>
+                <div>
+                  <label>景品名:</label>
+                  <input type="text" value={newPrizeName} onChange={(e) => this.setState({ newPrizeName: e.target.value })} />
+                </div>
+                <div>
+                  <label>上限数量:</label>
+                  <input type="number" value={newPrizeMaxQuantity} onChange={(e) => this.setState({ newPrizeMaxQuantity: e.target.value })} />
+                </div>
+                <button onClick={this.addPrize}>景品を追加</button>
+                <button onClick={this.hideFormAndPrizes}>抽選を始める</button>
+              </div>
+            )}
+
+
+            {hideDraw && (
+              <div>
+                <button onClick={this.drawWinner}>抽選する</button>
+                <p>抽選結果: {drawResult}</p>
+              </div>
+            )}
+            {showPrizes && (
+              <div>
+                <h2>景品一覧</h2>
+                <ul>
+                  {prizes.map((prize, index) => (
+                    <li key={index}>
+                      {prize.name} - 上限数量: {prize.maxQuantity}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+          </div>
+        );
+      }
+    }
+
+    // ReactコンポーネントをReactDOMでレンダリング
+    ReactDOM.render(<LotteryApp />, document.getElementById('root'));
+  </script>
+</body>
+
+</html>

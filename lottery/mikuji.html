@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="./lot.js"></script>
+  <title>Document</title>
+</head>
+<body>
+
+
+  
+  <h1>text</h1>
+
+  <div class="" id="main">
+    <!-- <div class="bluelight"></div> -->
+    <!-- <div class="rectangle2"></div> -->
+    <!-- <div class="rectangle3"></div> -->
+    <!-- <div class="rectangle"></div> -->
+    
+    
+    
+  
+
+  <button id="button" onclick="start()">スタート</button>
+</div>
+  
+  <h2>text</h2>
+
+  <div id="result">
+    
+    <div id="effect">
+      <img src="/app/image/campaign/dks/2305/230500_lamdash/doraiya.png" class="resize dryer">
+    </div>
+    
+    <div id="history"></div>
+    <div class="closeBtn">
+      <button id="modalClose">×</button>
+    </div>
+    
+  </div>
+
+  <!-- <button onclick="window.location.reload();">リロード</button>  -->
+  <script>
+  
+  // const MAX_NUMBER = 10;
+  // let main = document.getElementById('main');
+  // let button = document.getElementById('button');
+  // let history = document.getElementById('history');
+  // let historyArray = [];
+  // let targetNumber = [];
+  // for(let i = 1; i <= MAX_NUMBER; i++){
+  //   targetNumber.push(i);
+  // }
+  
+  // let timerId;
+  
+  // button.onclick = () => {
+  
+  //   if(targetNumber.length === 0){
+  //     alert('すべての番号の発表が終わりました') ;
+  //     clearInterval(timerId);
+  //     return;
+  //   }
+  
+  //       let targetIndex = Math.floor(Math.random() * targetNumber.length) ;  
+  //       main.textContent = targetNumber[targetIndex];
+
+  //     clearInterval(timerId); 
+
+  //     targetNumber.splice(targetIndex, 1);
+  //     historyArray.push(main.textContent);
+  //     history.textContent = historyArray;
+  
+  //         if (main.textContent < 11)msg = '<span style="font-size:3rem;">1等</span>'+'<br><img src="/app/image/campaign/dks/2305/230513_yanai_sumaho/images/LP_03.jpg" class="resize">';
+  //         if (main.textContent < 8) msg = "2等";
+  //         if (main.textContent < 4) msg = "3等";
+  
+  //         document.getElementById("history").innerHTML = msg;
+  //         console.log(main.textContent);
+  //   }
+
+  
+  
+  // この下戻す
+  
+    // if(targetNumber.length === 0){
+    //   alert('すべての番号の発表が終わりました') ;
+    //   clearInterval(timerId);
+    //   return;
+    // }
+    
+                  // if(button.textContent === 'スタート'){
+                  //   button.textContent = 'ストップ';
+                  // timerId = setInterval( () => {
+        // let targetIndex = Math.floor(Math.random() * targetNumber.length) ;  
+        // main.textContent = targetNumber[targetIndex];
+  
+        //   msg = "大吉";
+        //   if (main.textContent < 8) msg = "中吉";
+        //   if (main.textContent < 4) msg = "小吉";
+                  // if (main < 20) msg = "吉";
+                  // if (main < 10) msg = "凶";
+        // document.getElementById("history").innerHTML = msg;
+        // console.log(main.textContent);
+  
+      // }, 10)
+    // }else{
+    //   button.textContent = 'スタート';
+    //   clearInterval(timerId); 
+    //   let targetIndex = targetNumber.indexOf(Number(main.textContent));   
+    //   targetNumber.splice(targetIndex, 1);
+    //   historyArray.push(main.textContent);
+    //   history.textContent = historyArray;
+    // }
+  // }
+  </script>
+   
+  <!-- この上戻す -->
+  
+  <!-- <script type="text/javascript">
+      function random() {
+      var rand = Math.floor( Math.random() * 100) ; //おみくじの目の生成
+              msg = "大吉";
+          if (rand < 50) msg = "中吉";
+          if (rand < 30) msg = "小吉";
+          if (rand < 20) msg = "吉";
+          if (rand < 10) msg = "凶";
+      document.getElementById("omikuji").innerHTML = msg; //おみくじの目の出力
+      }
+      </script> -->
+
+
+</body>
+</html>
+
