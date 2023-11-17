@@ -26,7 +26,7 @@ const StyledLink = styled(Link)(({ theme }) => ({
   variant: 'body2'
 }));
 
-export default function Q1() {
+export default function Q3_2() {
   const navigate = useNavigate();
   const back = () => {
     navigate(-1)
@@ -42,12 +42,12 @@ export default function Q1() {
         <CardContent sx={{ flexGrow: 1, display: 'flex' }}>
           <h3 sx={{ display: 'flex' }}>
             <span style={{ padding: '5px 10px', background: '#fff', borderRadius: '50%', margin: '0 10px 0 0' }}>Q</span>
-            旅行にはよく行く
+            家族や友達と旅行するのが好き
           </h3>
         </CardContent>
         <CardActions style={{ justifyContent: 'center', padding: '0 0 25px' }}>
-          <StyledButton size='large' variant="contained" color='primary' component={Link} to="/Q2_1">YES</StyledButton>
-          <StyledButton size='large' variant="contained" color='secondary' component={Link} to="/Q2_2">NO</StyledButton>
+          <StyledButton size='large' variant="contained" color='primary' component={Link} to="/Q4_1">YES</StyledButton>
+          <StyledButton size='large' variant="contained" color='secondary' component={Link} to="/Q4_2">NO</StyledButton>
         </CardActions>
 
       </Card>
